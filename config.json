@@ -1,0 +1,34 @@
+{
+    "input_dir": "input_pdfs",
+    "output_dir": "output_pdfs",
+    "log_dir": "logs",
+    "font_dir": "fonts",
+    "front_template_filename": "front.pdf",
+    "back_cover_filename": "back.pdf",
+
+    "name_extraction": {
+        "page_index": 0,
+        "label_text": "Ad Soyad",
+        "row_gap_ratio": 1.5,
+        "column_margin": 12.0
+    },
+
+    "template": {
+        "marker_text": "{{student.name}}",
+        "fallback_x": 297.75,
+        "fallback_y": 340,
+        "font_name": "DejaVuSans-Bold",
+        "font_size": 26,
+        "font_color_r": 0.10,
+        "font_color_g": 0.36,
+        "font_color_b": 0.60,
+        "text_align": "center"
+    },
+
+    "processing": {
+        "max_workers": 4,
+        "booklet_page_multiple": 4,
+        "stream_buffer_size_mb": 64,
+        "delete_source_pdf": false
+    }
+}

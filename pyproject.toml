@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "analyse-booklet-engine"
+version = "1.0.0"
+description = "Personalized YKS analysis booklet creation engine (front cover + analysis + back cover, mod-4 padded)"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "Booklet Engine Team"}]
+
+dependencies = [
+    "PyMuPDF>=1.23.0",
+    "pikepdf>=8.0.0",
+    "reportlab>=4.0",
+    "pydantic>=2.0",
+    "rich>=13.0",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.scripts]
+analyse-booklet-engine = "src.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
